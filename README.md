@@ -1,5 +1,17 @@
 # EvmRewriter
 
+## Docker 
+Build docker image:
+```bash
+docker build -t smartshield .
+```
+
+Run example:
+```bash
+docker run -v ./test:/smartshield/test smartshieldtest -b ./test/Reentrancy.bin -m ./test/metadata.json -r ./test/report.json -o ./test/patchedReentrancy.bin
+```
+
+
 ## Installation
 
 ```bash
