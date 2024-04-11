@@ -1,5 +1,11 @@
 # EvmRewriter
 
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Usage
 
 usage: evm_rewriter.py [-h] -b BYTECODE -m METADATA [-t TIMEOUT] [-o OUTPUT] [-r REPORT] [-d]
