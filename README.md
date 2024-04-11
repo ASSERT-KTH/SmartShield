@@ -23,7 +23,7 @@ optional arguments:
 
 ## Test Example
 When you are in EvmRewriter directory, type the following code to run a test example.
-`python3 evm_rewriter.py -b ./test/Reentrancy.bin -m ./test/metadata.json -r ./test/report.json -o ./test/patchedReentrancy.bin `
+`python3 evm_rewriter.py -b ../test/Reentrancy.bin -m ../test/metadata.json -r ../test/report.json -o ../test/patchedReentrancy.bin `
 
 ## Format of Vulnerability Metadata File
 
