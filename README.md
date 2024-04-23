@@ -25,6 +25,7 @@ usage: evm_rewriter.py [-h] -b BYTECODE -m METADATA [-t TIMEOUT] [-o OUTPUT] [-r
 An EVM ByteCode Rewriter
 
 optional arguments:
+
     -h, --help          show this help message and exit
     -b BYTECODE, --bytecode BYTECODE
                         EVM bytecode file (HEX)
