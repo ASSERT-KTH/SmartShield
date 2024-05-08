@@ -4,9 +4,7 @@
 
 usage: run_smartshields.py [-h] -s [SOURCE] [-b] -m MAIN [-t TIMEOUT] [-o OUTPUTDIR] [-d]
 
-An EVM ByteCode Rewriter
-
-optional arguments:
+arguments:
 
     -h, --help          show this help message and exit
     -s SOURCE, --source Source for solidity file or
