@@ -21,8 +21,6 @@ def main():
                         help='Timeout for analyzing and patching in seconds (default to 60 seconds)')
     parser.add_argument('-o', '--output',
                         type=str, required=True, help='Output directory')
-    parser.add_argument('-r', '--report',
-                        type=str, help='Patching report file (JSON)')
     parser.add_argument('-d', '--debug',
                         action='store_true', help='Debug output')
     args = parser.parse_args()
@@ -54,9 +52,10 @@ def main():
         f.write(output)
 
     patched_file = filename.replace(".sol", ".patched.sol")
+    report_file = filename.replace(".sol", ".report.json")
     
     print("Running Smartshield...")
-    process = subprocess.run(f"python evm_rewriter.py -b {compiled_file} -m {metadata_file} -t {args.timeout} -o {patched_file} -r {args.report} {'-d' if args.debug else ''}", shell=True, capture_output=True)
+    process = subprocess.run(f"python evm_rewriter.py -b {compiled_file} -m {metadata_file} -t {args.timeout} -o {patched_file} -r {report_file} {'-d' if args.debug else ''}", shell=True, capture_output=True)
 
     print(process.stdout.decode())
 
