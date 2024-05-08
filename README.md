@@ -21,6 +21,7 @@ arguments:
 
 ## Test Example
 When you are in `src` directory, type the following code to run a test example.
+
 `python run_smartshields.py -s ../test/arbitrary_location_write_simple.sol -m Wallet -o ../test/`
 
 # EvmRewriter
