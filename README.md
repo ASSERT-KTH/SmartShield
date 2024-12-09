@@ -1,19 +1,16 @@
 # Smartshield
 
-# Running with Mythril as a vulnerability detector
-## Usage
+## Running with Mythril as a vulnerability detector
 
 usage: run_smartshields.py [-h] -s [SOURCE] [-b] -m MAIN [-t TIMEOUT] [-o OUTPUTDIR] [-d]
 
-An EVM ByteCode Rewriter
-
-optional arguments:
+arguments:
 
     -h, --help          show this help message and exit
     -s SOURCE, --source Source for solidity file or
                         bytecode file (HEX)
     -m MAIN, --main MAIN
-                        Main contract to be analysed
+                        Main contract to be analyzed
     -t TIMEOUT, --timeout TIMEOUT
                         Timeout for analyzing and patching in seconds
                         (default to 60 seconds)
@@ -24,6 +21,7 @@ optional arguments:
 
 ## Test Example
 When you are in `src` directory, type the following code to run a test example.
+
 `python run_smartshields.py -s ../test/arbitrary_location_write_simple.sol -m Wallet -o ../test/`
 
 # EvmRewriter
