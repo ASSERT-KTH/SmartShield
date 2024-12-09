@@ -51,8 +51,8 @@ if __name__ == "__main__":
         data = json.load(file)
     
     for entry in data:
-        # if entry.get('path') == "dataset/access_control/FibonacciBalance.sol" or entry.get('path') == "dataset/access_control/parity_wallet_bug_2.sol":
-        #     continue
+        if entry.get('path') == "dataset/access_control/FibonacciBalance.sol" or entry.get('path') == "dataset/access_control/parity_wallet_bug_2.sol":
+            continue
         print(entry.get('path'))
         path = os.path.join(smartbugs, entry.get('path'))
         contract = entry.get('contract_names')[0]
