@@ -8,7 +8,7 @@ import docker
 def run_mythril(bytecode, metadata, ignore_bugs=[], debug=False):
     client = docker.from_env()
     print("Running Mythril...")
-    cmd = '-v 5 analyze -m ArbitraryStorage,ArbitraryDelegateCall,TxOrigin,EtherThief,IntegerArithmetics,StateChangeAfterCall,AccidentallyKillable,UncheckedRetval --bin-runtime -c '+bytecode+' --parallel-solving -o json'
+    cmd = '-v 5 analyze -m ArbitraryStorage,ArbitraryDelegateCall,TxOrigin,EtherThief,IntegerArithmetics,StateChangeAfterCall,AccidentallyKillable,UncheckedRetval --bin-runtime -c '+bytecode+' --parallel-solving -o json --execution-timeout 1800'
     if debug:
         print(cmd)
     container = client.containers.run('christoftorres/mythril', cmd, detach=True, remove=False)

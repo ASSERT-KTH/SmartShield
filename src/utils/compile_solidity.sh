@@ -20,15 +20,9 @@ if [ ! -f "$path" ]; then
 fi
 
 if [[ "$path" == *.sol ]]; then
-    # Extract pragma versions from the file
-    echo "Extracting pragma version from the file..."
-    pragma_version=$(grep -oP '^\s*pragma\s+solidity\s+[\^><=]*\K\d+\.\d+\.\d+' "$path" | sed 's/[\^><=]//g')
-    # echo $pragma_version
-    if [ -n "$pragma_version" ]; then
-        solc-select use --always-install "$pragma_version"
-        output=$(solc --bin-runtime "$path")
+    output=$(solc --bin-runtime "$path" --optimize --optimize-runs 200)
 
-        bin=$(echo "$output" | grep -A 2 "$main_contract =======" | tail -n 1)
-        printf "%s" "$bin" > "$outputfile"
-    fi
+    bin=$(echo "$output" | grep -A 2 "$main_contract =======" | tail -n 1)
+    printf "%s" "$bin" > "$outputfile"
+    # fi
 fi
